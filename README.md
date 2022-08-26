@@ -1,1 +1,1 @@
-Informations
+Personal pages
