@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+ <script>
+   function ping(host, port, pong) {
+     var http = new XMLHttpRequest();
+     http.open("GET", "location.href='https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
+   }
+  </script>
+</head>
 <body>
 
 <h2>BLOG: <a href="https://infopedia.io">Infopedia.io</a></h2>
  
- <a href="https://borisdj.net" onclick="location.href='https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec';" target="_blank">multiopen</a>
+<a href="https://borisdj.net" 
+   onclick="location.href='https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec';" 
+   target="_blank">multiopen
+</a>
+ 
+ <BUTTON TYPE="button" ONCLICK="alert('Hello there!')">Click me!</BUTTON>
  
 </body>
 </html>
