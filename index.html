@@ -3,26 +3,23 @@
 <head>
  <script>
    function ping() {
-    var started = new Date().getTime();
+ if(!this.inUse) {
 
-  var http = new XMLHttpRequest();
+    this.inUse = true;
+    this.callback = callback
+    this.ip = ip;
 
-  http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
-  http.onreadystatechange = function() {
-    if (http.readyState == 4) {
-      var ended = new Date().getTime();
+    var _that = this;
 
-      var milliseconds = ended - started;
+    this.img = new Image();
 
-      if (pong != null) {
-        pong(milliseconds);
-      }
-    }
-  };
-  try {
-    http.send(null);
-  } catch(exception) {
-    // this is expected
+    this.img.onload = function() {_that.good();};
+    this.img.onerror = function() {_that.good();};
+
+    this.start = new Date().getTime();
+    this.img.src = "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec";
+    this.timer = setTimeout(function() { _that.bad();}, 1500);
+
   }
    }
     
