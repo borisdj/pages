@@ -3,8 +3,15 @@
 <head>
  <script>
    function ping() {
+     alert('Hello 1!')
      var http = new XMLHttpRequest();
      http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
+     try {
+      http.send(null);
+     } catch(exception) {
+      // this is expected
+     }
+     alert('Hello 2!');
    }
   </script>
 </head>
