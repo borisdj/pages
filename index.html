@@ -3,16 +3,28 @@
 <head>
  <script>
    function ping() {
-     try {
-       var http = new XMLHttpRequest();
-       http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
-       http.send(null);
-     } catch(exception) {
-      // this is expected
-      alert('Hello 14!');
-      http.abort();
-     }
-   }
+    var started = new Date().getTime();
+
+  var http = new XMLHttpRequest();
+
+  http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
+  http.onreadystatechange = function() {
+    if (http.readyState == 4) {
+      var ended = new Date().getTime();
+
+      var milliseconds = ended - started;
+
+      if (pong != null) {
+        pong(milliseconds);
+      }
+    }
+  };
+  try {
+    http.send(null);
+  } catch(exception) {
+    // this is expected
+  }
+    
   </script>
 </head>
 <body>
