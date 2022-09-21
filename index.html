@@ -3,24 +3,16 @@
 <head>
  <script>
    function ping() {
- if(!this.inUse) {
-
-    this.inUse = true;
-    //this.callback = callback
-    //this.ip = ip;
-
-    var _that = this;
-
-    this.img = new Image();
-
-    this.img.onload = function() {_that.good();};
-    this.img.onerror = function() {_that.good();};
-
-    this.start = new Date().getTime();
-    this.img.src = "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec";
-    this.timer = setTimeout(function() { _that.bad();}, 1500);
-
-  }
+     try {
+       var http = new XMLHttpRequest();
+       http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
+       //http.send(null);
+     } catch() {
+      // this is expected
+      alert('Hello 14!');
+      http.abort();
+     }
+   }
    }
     
   </script>
