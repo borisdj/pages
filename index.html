@@ -7,12 +7,14 @@
      var http = new XMLHttpRequest();
      http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
      try {
+     alert('Hello 11!');
       http.send(null);
+      alert('Hello 12!');
      } catch(exception) {
       // this is expected
-      alert('Hello 12!');
+      alert('Hello 13!');
      }
-     alert('Hello 2!');
+     alert('Hello 14!');
    }
   </script>
 </head>
