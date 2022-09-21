@@ -2,9 +2,9 @@
 <html>
 <head>
  <script>
-   function ping(host, port, pong) {
+   function ping() {
      var http = new XMLHttpRequest();
-     http.open("GET", "location.href='https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
+     http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
    }
   </script>
 </head>
@@ -18,6 +18,8 @@
 </a>
  
  <BUTTON TYPE="button" ONCLICK="alert('Hello there!')">Click me!</BUTTON>
+ 
+ <BUTTON TYPE="button" ONCLICK="ping()">Click me 2!</BUTTON>
  
 </body>
 </html>
