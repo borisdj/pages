@@ -3,19 +3,15 @@
 <head>
  <script>
    function ping() {
-     alert('Hello 1!')
-     var http = new XMLHttpRequest();
-     http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
      try {
-     alert('Hello 11!');
-      http.send(null);
-      alert('Hello 12!');
+       var http = new XMLHttpRequest();
+       http.open("GET", "https://script.google.com/macros/s/AKfycbzZHMD7Y8gp04hSipbZqj0K8ThiV7fxHf0jZboXcfvU1saESYdk5PjyN6XNwMMCj8uv/exec", /*async*/true);
+       http.send(null);
      } catch(exception) {
       // this is expected
-      alert('Hello 13!');
+      alert('Hello 14!');
+      http.abort();
      }
-     alert('Hello 14!');
-    http.abort();
    }
   </script>
 </head>
