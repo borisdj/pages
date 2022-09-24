@@ -2,10 +2,18 @@
 <html>
 <head>
   <script>
+    function run() {
+    let url = 'https://script.google.com/macros/s/AKfycbwlgQoGDx4wE-U2_3Ni1igWcd2UuPoUhcpaeJO6dvpynWCsMVlxSiTHsUSkodTJOMWwtA/exec';
+    fetch(url)
+      .then(res => res.json())
+      .then(out =>
+        alert(out);
+      .catch(err => { throw err });
+    }
   </script>
 </head>
 <body>
   <h2>BLOG: <a href="https://infopedia.io">Infopedia.io</a></h2>
-  <!--BUTTON TYPE="button" ONCLICK="run()">Click me!</BUTTON--!>
+  <BUTTON TYPE="button" ONCLICK="run()">Click me!</BUTTON>
 </body>
 </html>
